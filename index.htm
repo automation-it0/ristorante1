@@ -8,10 +8,10 @@
     <link href="http://fonts.cdnfonts.com/css/segoe-ui-4" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/js/swiper.min.js'></script>
     <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Festive&display=swap" rel="stylesheet">
+    <link href="https://it.allfont.net/allfont.css?fonts=arial-narrow" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Festive&family=Italianno&family=Montserrat&display=swap" rel="stylesheet">
     <style>
         p{
@@ -21,9 +21,12 @@
             color:white;
         }
         body{
+            user-select: none;
             margin:0;
             background-color: rgb(20, 22, 36);
             min-width: 100%;
+            opacity: 0;
+            transition: all 0.5s;
         }
         .top{
             min-width:100%;
@@ -49,7 +52,7 @@
             background-repeat: no-repeat;
             background-size:cover;
             aspect-ratio: 5/6.5;
-            border-radius: 0px;
+            border-radius: 20px;
             display: table;
             width:100%;
             max-height: 585px;
@@ -68,12 +71,6 @@
             margin-top:15px;
             color:black;
             font-family:"Montserrat";
-        }
-        @media screen and (min-width: 450px){
-            .cont{
-                width:450px;
-                margin:auto;
-            }
         }
         .link-on-image{
             padding:5px;
@@ -205,9 +202,117 @@
             border-radius: 24px;
             border:5px solid #5454548f
         }
+        .story{
+            width:100%;
+            margin:auto;
+            background-color:rgb(187, 127, 14);
+            min-height: 50px;
+        }
+        .story h1{
+            font-family: "Montserrat";
+            text-transform: uppercase;
+            text-align: center;
+            padding-top:20px;
+            margin:0;
+        }
+        .top .story{
+            display:none;
+        }
+        .story h1{
+            font-size:28px;
+        }
+        .st1 .story p{
+            width:80%;
+            margin:auto;
+            text-align: justify;
+            font-family:'Arial Narrow', Arial, sans-serif
+        }
+        .foot{
+            width:100%;
+            min-height: 300px;
+            background: #171717;
+        }
+        .stPosix{
+                display:block;
+                max-width:800px;
+                margin-left:auto;
+                margin-right: auto;
+            }
+            .top .Map{
+                display:none
+            }
+        @media screen and (min-width: 600px){
+            .top{
+                min-width:50%;
+            }
+            .st1 .story p{
+                width:500px;
+            }
+            .settimanale{
+                height:auto;
+                margin:0;
+                border-radius: 0;
+            }
+            .st1{
+                display:none;
+            }
+            .cont{
+                display:flex;
+            }
+            .Specialita_{
+                padding:0;
+                margin:0;
+                border-radius: 0;
+            }
+            .top .story{
+                display:block;
+            }
+        }
+        @media screen and (min-width:950px){
+            .primi{max-width: 90%;}
+        }
+        @media screen and (min-width:900px){
+            .top .story{
+                display:none;
+            }
+            .st1{
+                display:block;
+            }
+            .Flex_elem{
+                display:flex;
+            }
+            .pr1{
+                border:5px solid #171717;
+            }
+            .sep{
+                width:90%;
+            }
+            .pr1{
+                height:100%;
+                padding-bottom:10px;
+            }
+            .primi{
+                max-width: 130px;
+                margin:auto;
+                border:5px solid rgb(60, 60, 141);
+                border-radius: 25px;
+            }
+        }
+        .foot{
+            display:flex;
+        }
+        .foot * {
+            width:50%;
+        }
+        .foot p{
+            color:aliceblue;
+            padding:5px;
+            font-family: "Segoe UI";
+            margin:0;
+        }
     </style>
 </head>
-<body>
+<body onload="document.body.style.opacity = '1.0'">
     <div class="cont">
         <div class="top">
             <div class="tp">
@@ -224,16 +329,27 @@
                     <p>PRENOTA IL TUO TAVOLO</p>
                 </div class="dh">
             </div>
-        </div>
-        <div class="wp">
-            <h1>Contattaci anche su whatsapp!</h1>
-            <div class="hr">
-                <a href="https://wa.me/+393495271797">Cliccando qui!</a>
+            <div class="wp">
+                <h1 style="font-family: Segoe UI;">Contattaci anche su whatsapp!</h1>
+                <div class="hr">
+                    <a href="https://wa.me/+393495271797">Cliccando qui!</a>
+                </div>
+            </div>
+            <br>
+            <br>
+            <br>
+            <div class="story">
+                <h1>Una storia nel cuore</h1>
+                <p>TESTO</p>
             </div>
         </div>
         <div class="settimanale">
             <h1 class="Specialita_">Specialità settimanali</h1>
-            <div class="piatti">
+            <br>
+            <h1 class="Foot-settimanale" style="padding:0;margin-top:0;">LA QUALITA' SOLO DA NOI!</h1>
+            <br>
+            <div class="Flex_elem">
+                <div class="piatti">
                 <div class="pr1">
                     <h1>PRIMI</h1>
                     <div class="primi">
@@ -278,8 +394,8 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="piatti">
+                </div>
+                <div class="piatti">
                 <div class="pr1">
                     <h1>SECONDI</h1>
                     <div class="primi">
@@ -324,8 +440,8 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="piatti">
+                </div>
+                <div class="piatti">
                 <div class="pr1">
                     <h1>DESSERT</h1>
                     <div class="primi">
@@ -370,9 +486,24 @@
                         </div>
                     </div>
                 </div>
+                </div>
             </div>
         </div>
     </div>
-    <br><br><br><br><br><br><br><br><br><br>
+    <br>
+    <br>
+    <div class="st1">
+        <div class="story" style="max-width:800px">
+            <h1>Una storia nel cuore</h1>
+            <p>TESTO</p>
+        </div>
+    </div>
+    <br>
+    <div class="stPosix">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1624.4111945329905!2d8.565579479464844!3d44.3536040073055!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12d31f317891d1c3%3A0x4984779684a6562a!2sDa%20Alfredo!5e0!3m2!1sit!2sit!4v1635183424858!5m2!1sit!2sit" style="border:0;width:100%;height:300px" allowfullscreen="" class="Map" loading="lazy"></iframe>
+    </div>
+    <br>
+    <div class="foot">
+        <p class="side1">Pt. Iva: 32132134324235342 <br>Mail: mail@mail.com <br>Info aggiuntive...</p>
+    </div>
 </body>
-</html>
