@@ -84,6 +84,8 @@ button {
 	border-radius: 10px;
 	color: #fff;
 	font-size: 1.5rem;
+  box-shadow:0px 0px 10px 5px #545454;
+
 }
 
 .back{
@@ -297,6 +299,9 @@ button {
     border-radius: 50px;
     transition:all 0.5s;
 }
+.front{
+  border-radius: 11px;
+}
 </style>
 <div id="topelem"></div>
 <button class="checkbox" onclick="SetD()">
@@ -321,13 +326,18 @@ button {
     var Done = false
     function SetD(){
         if(Done === false){
-        console.log("done")
           document.getElementById("DrkBtn_").style.marginLeft = "40px";
           document.getElementById("DrkBtn_").style.boxShadow = "0px 0px 20px 5px #545454";
           document.body.style.backgroundColor = "black"
           document.querySelector("h1").style.color = "#fff"
           document.getElementById("SepEleme").style.backgroundColor = "#fff"
           document.getElementById("onload_remove").style.color = "black"
+          var elems = document.getElementsByClassName("front")
+          for(var i=0, len=elems.length; i<len; i++)
+            {
+                elems[i].style.boxShadow = "0px 0px 10px 5px #545454"
+            }
+
           Done = true
         }
         else{
@@ -337,6 +347,11 @@ button {
           document.body.style.backgroundColor = "white"
           document.querySelector("h1").style.color = "#444"
           document.getElementById("SepEleme").style.backgroundColor = "black"
+          var elems = document.getElementsByClassName("front")
+          for(var i=0, len=elems.length; i<len; i++)
+            {
+                elems[i].style.boxShadow = "0px 0px 10px 5px #171717"
+            }
           Done = false
         }
     }
@@ -348,7 +363,7 @@ button {
   <div class="cols">
 			<div class="col" ontouchstart="this.classList.toggle('hover');">
 				<div class="container">
-					<div class="front" style="background-image: url(https://unsplash.it/500/500/)">
+					<div class="front" id="frontStyleElem" style="background-image: url(https://unsplash.it/500/500/)">
 						<div class="inner">
 							<p>Piatto 1</p>
               <span>Parole..</span>
@@ -363,7 +378,7 @@ button {
 			</div>
 			<div class="col" ontouchstart="this.classList.toggle('hover');">
 				<div class="container">
-					<div class="front" style="background-image:url(https://unsplash.it/511/511/)">
+					<div class="front" id="frontStyleElem" style="background-image:url(https://unsplash.it/511/511/)">
 						<div class="inner">
 							<p>Piatto 2</p>
               <span>Parole...</span>
@@ -378,7 +393,7 @@ button {
 			</div>
 			<div class="col" ontouchstart="this.classList.toggle('hover');">
 				<div class="container">
-					<div class="front" style="background-image: url(https://unsplash.it/502/502/)">
+					<div class="front" id="frontStyleElem" style="background-image: url(https://unsplash.it/502/502/)">
 						<div class="inner">
 							<p>Piatto 3</p>
               <span>Buoono</span>
@@ -396,7 +411,7 @@ button {
 <div class="cols">
     <div class="col" ontouchstart="this.classList.toggle('hover');">
         <div class="container">
-            <div class="front" style="background-image: url(https://unsplash.it/500/500/)">
+            <div class="front" id="frontStyleElem" style="background-image: url(https://unsplash.it/500/500/)">
                 <div class="inner">
                     <p>Piatto 1</p>
       <span>Parole..</span>
@@ -411,7 +426,7 @@ button {
     </div>
     <div class="col" ontouchstart="this.classList.toggle('hover');">
         <div class="container">
-            <div class="front" style="background-image:url(https://unsplash.it/511/511/)">
+            <div class="front" id="frontStyleElem" style="background-image:url(https://unsplash.it/511/511/)">
                 <div class="inner">
                     <p>Piatto 2</p>
       <span>Parole...</span>
@@ -426,7 +441,7 @@ button {
     </div>
     <div class="col" ontouchstart="this.classList.toggle('hover');">
         <div class="container">
-            <div class="front" style="background-image: url(https://unsplash.it/502/502/)">
+            <div class="front" id="frontStyleElem" style="background-image: url(https://unsplash.it/502/502/)">
                 <div class="inner">
                     <p>Piatto 3</p>
       <span>Buoono</span>
@@ -444,7 +459,7 @@ button {
 <div class="cols">
     <div class="col" ontouchstart="this.classList.toggle('hover');">
         <div class="container">
-            <div class="front" style="background-image: url(https://unsplash.it/500/500/)">
+            <div class="front" id="frontStyleElem" style="background-image: url(https://unsplash.it/500/500/)">
                 <div class="inner">
                     <p>Piatto 1</p>
       <span>Parole..</span>
@@ -459,7 +474,7 @@ button {
     </div>
     <div class="col" ontouchstart="this.classList.toggle('hover');">
         <div class="container">
-            <div class="front" style="background-image:url(https://unsplash.it/511/511/)">
+            <div class="front" id="frontStyleElem" style="background-image:url(https://unsplash.it/511/511/)">
                 <div class="inner">
                     <p>Piatto 2</p>
       <span>Parole...</span>
@@ -474,7 +489,7 @@ button {
     </div>
     <div class="col" ontouchstart="this.classList.toggle('hover');">
         <div class="container">
-            <div class="front" style="background-image: url(https://unsplash.it/502/502/)">
+            <div class="front" id="frontStyleElem" style="background-image: url(https://unsplash.it/502/502/)">
                 <div class="inner">
                     <p>Piatto 3</p>
       <span>Buoono</span>
@@ -492,7 +507,7 @@ button {
 <div class="cols">
     <div class="col" ontouchstart="this.classList.toggle('hover');">
         <div class="container">
-            <div class="front" style="background-image: url(https://unsplash.it/500/500/)">
+            <div class="front" id="frontStyleElem" style="background-image: url(https://unsplash.it/500/500/)">
                 <div class="inner">
                     <p>Piatto 1</p>
       <span>Parole..</span>
@@ -507,7 +522,7 @@ button {
     </div>
     <div class="col" ontouchstart="this.classList.toggle('hover');">
         <div class="container">
-            <div class="front" style="background-image:url(https://unsplash.it/511/511/)">
+            <div class="front" id="frontStyleElem" style="background-image:url(https://unsplash.it/511/511/)">
                 <div class="inner">
                     <p>Piatto 2</p>
       <span>Parole...</span>
@@ -522,7 +537,7 @@ button {
     </div>
     <div class="col" ontouchstart="this.classList.toggle('hover');">
         <div class="container">
-            <div class="front" style="background-image: url(https://unsplash.it/502/502/)">
+            <div class="front" id="frontStyleElem" style="background-image: url(https://unsplash.it/502/502/)">
                 <div class="inner">
                     <p>Piatto 3</p>
       <span>Buoono</span>
@@ -563,9 +578,6 @@ button {
         function sleep(ms) {
             return new Promise(resolve => setTimeout(resolve, ms));
             }
-      function DarkMode(){
-          document.getElementById("DrkBtn_")
-      }
         function sleep(ms) {
             return new Promise(resolve => setTimeout(resolve, ms));
                  }
@@ -610,7 +622,7 @@ button {
         bottom:0;
         left: 0;
         float: left;
-        width: 130px; height:50px;
+        height:50px;
         line-height: 45px;
         font-size: 3ch;
         margin:0;
@@ -620,6 +632,6 @@ button {
     }
 </style>
 <a href="" class="wp"></a>
-<h1 class="wp2">chiamaci</h1>
+<h1 class="wp2">+39 349 527 1797</h1>
 </body>
 </html>
