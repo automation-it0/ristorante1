@@ -14,7 +14,7 @@
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
-body{user-select:none;}
+body{user-select:none;transition:all 0.5s;}
 h1{
   font-size: 2.5rem;
   font-family: 'Montserrat';
@@ -276,7 +276,54 @@ button {
   vertical-align: middle;
   margin-top:160px;
 }
+.checkbox{
+    position: sticky;
+    top:10px;
+    width:80px;
+    height:40px;
+    margin:5px;
+    margin-left:10px;
+    background-color:#282933;
+    border-radius: 25px;
+    z-index: 1;
+    border:0;
+}
+.btnIn{
+    margin:2px;
+    margin-top:2px;
+    height:36px;
+    width:36px;
+    background: #bbcac7;
+    border-radius: 50px;
+    transition:all 0.5s;
+}
 </style>
+
+<button class="checkbox" onclick="SetD()">
+    <div class="btnIn" id="DrkBtn_"></div>
+</button>
+<script>
+    var Done = false
+    function SetD(){
+        if(Done === false){
+        console.log("done")
+          document.getElementById("DrkBtn_").style.marginLeft = "40px";
+          document.getElementById("DrkBtn_").style.boxShadow = "0px 0px 20px 5px #545454";
+          document.body.style.backgroundColor = "black"
+          document.querySelector("h1").style.color = "#fff"
+          document.getElementById("SepEleme").style.backgroundColor = "#fff"
+          Done = true
+        }
+        else{
+          document.getElementById("DrkBtn_").style.marginLeft = "2px";
+          document.getElementById("DrkBtn_").style.boxShadow = "";
+          document.body.style.backgroundColor = "white"
+          document.querySelector("h1").style.color = "#444"
+          document.getElementById("SepEleme").style.backgroundColor = "black"
+          Done = false
+        }
+    }
+</script>
 <div class="wrapper2" id="onload_remove">
     <div class="typing-demo" id="LoadRem">
       Una meraviglia di sapori
@@ -439,15 +486,65 @@ button {
         </div>
     </div>
 </div>
+<h1>Aperitivi</h1>
+<div class="cols">
+    <div class="col" ontouchstart="this.classList.toggle('hover');">
+        <div class="container">
+            <div class="front" style="background-image: url(https://unsplash.it/500/500/)">
+                <div class="inner">
+                    <p>Piatto 1</p>
+      <span>Parole..</span>
+                </div>
+            </div>
+            <div class="back">
+                <div class="inner">
+                  <p>Descrizione migliore</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col" ontouchstart="this.classList.toggle('hover');">
+        <div class="container">
+            <div class="front" style="background-image:url(https://unsplash.it/511/511/)">
+                <div class="inner">
+                    <p>Piatto 2</p>
+      <span>Parole...</span>
+                </div>
+            </div>
+            <div class="back">
+                <div class="inner">
+                  <p>Descrizione migliore</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col" ontouchstart="this.classList.toggle('hover');">
+        <div class="container">
+            <div class="front" style="background-image: url(https://unsplash.it/502/502/)">
+                <div class="inner">
+                    <p>Piatto 3</p>
+      <span>Buoono</span>
+                </div>
+            </div>
+            <div class="back">
+                <div class="inner">
+                    <p>Descrizione migliore</p>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
-<br>
-<div style="width: 100%; height:5px;background:black;"></div>
+</div>
+<div id="SepEleme" style="width: 100%; height:5px;background:black;"></div>
 <h1>SU DI NOI</h1>
 <p style="font-family: 'Poppins';text-align: justify;padding:10px;text-align-last: center;background-color: rgb(187, 255, 252)">Noi lavoriamo una cucina tradizionale in chiave moderna rispettandone il gusto ma cercando metodi di cottura e abbinamenti contemporanei, questa ricerca viene fatta grazie allo shef Simi Alfredo (premiato nel corso della sua carriera con riconoscimenti internazionali) per cercare di farvi provare una vera e propria esperienza culinaria, senza banalità</p>
 <h1>TI ASPETTIAMO</h1>
 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2852.879875922143!2d8.563949415552681!3d44.353518814880594!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12d31f317891d1c3%3A0x4984779684a6562a!2sDa%20Alfredo!5e0!3m2!1sit!2sit!4v1637160780057!5m2!1sit!2sit" style="border:0;width:100%;height:400px" allowfullscreen="" loading="lazy"></iframe>
 <!-- partial -->
   <script>
+      function DarkMode(){
+          document.getElementById("DrkBtn_")
+      }
         function sleep(ms) {
             return new Promise(resolve => setTimeout(resolve, ms));
                  }
@@ -481,20 +578,21 @@ button {
         right: 0;
         cursor: pointer;
         background-attachment: sticky;
-        float: right;
+        float: left;
         box-sizing: border-box;
         background-image: url(https://i.pinimg.com/originals/91/9d/f0/919df067a8fbd22ce7b6f401b7688b35.png);
         background-size: cover;
-        width: 80px; height:80px;
+        width: 50px; height:50px;
     }
     .wp2{
         position: sticky;
         bottom:0;
-        right: 0;
-        float: right;
-        width: 130px; height:55px;
-        margin-right: 5px;
+        left: 0;
+        float: left;
+        width: 130px; height:50px;
+        line-height: 45px;
         font-size: 3ch;
+        margin:0;
         color:#fff;
         text-shadow:3px 3px black;
         text-transform: uppercase;
@@ -502,6 +600,5 @@ button {
 </style>
 <a href="" class="wp"></a>
 <h1 class="wp2">chiamaci</h1>
-
 </body>
 </html>
