@@ -298,32 +298,11 @@ button {
     transition:all 0.5s;
 }
 </style>
-
+<div id="topelem"></div>
 <button class="checkbox" onclick="SetD()">
     <div class="btnIn" id="DrkBtn_"></div>
 </button>
-<script>
-    var Done = false
-    function SetD(){
-        if(Done === false){
-        console.log("done")
-          document.getElementById("DrkBtn_").style.marginLeft = "40px";
-          document.getElementById("DrkBtn_").style.boxShadow = "0px 0px 20px 5px #545454";
-          document.body.style.backgroundColor = "black"
-          document.querySelector("h1").style.color = "#fff"
-          document.getElementById("SepEleme").style.backgroundColor = "#fff"
-          Done = true
-        }
-        else{
-          document.getElementById("DrkBtn_").style.marginLeft = "2px";
-          document.getElementById("DrkBtn_").style.boxShadow = "";
-          document.body.style.backgroundColor = "white"
-          document.querySelector("h1").style.color = "#444"
-          document.getElementById("SepEleme").style.backgroundColor = "black"
-          Done = false
-        }
-    }
-</script>
+
 <div class="wrapper2" id="onload_remove">
     <div class="typing-demo" id="LoadRem">
       Una meraviglia di sapori
@@ -338,7 +317,30 @@ button {
     <div style="height:10px"></div>
 
 </div>
-
+<script>
+    var Done = false
+    function SetD(){
+        if(Done === false){
+        console.log("done")
+          document.getElementById("DrkBtn_").style.marginLeft = "40px";
+          document.getElementById("DrkBtn_").style.boxShadow = "0px 0px 20px 5px #545454";
+          document.body.style.backgroundColor = "black"
+          document.querySelector("h1").style.color = "#fff"
+          document.getElementById("SepEleme").style.backgroundColor = "#fff"
+          document.getElementById("onload_remove").style.color = "black"
+          Done = true
+        }
+        else{
+          document.getElementById("onload_remove").style.color = "#fff"
+          document.getElementById("DrkBtn_").style.marginLeft = "2px";
+          document.getElementById("DrkBtn_").style.boxShadow = "";
+          document.body.style.backgroundColor = "white"
+          document.querySelector("h1").style.color = "#444"
+          document.getElementById("SepEleme").style.backgroundColor = "black"
+          Done = false
+        }
+    }
+</script>
 <div class="wrapper">
 	<div id="ELEMINDEX"></div>
 
@@ -542,6 +544,25 @@ button {
 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2852.879875922143!2d8.563949415552681!3d44.353518814880594!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12d31f317891d1c3%3A0x4984779684a6562a!2sDa%20Alfredo!5e0!3m2!1sit!2sit!4v1637160780057!5m2!1sit!2sit" style="border:0;width:100%;height:400px" allowfullscreen="" loading="lazy"></iframe>
 <!-- partial -->
   <script>
+            window.addEventListener('scroll', function() {
+           var element = document.querySelector('body');
+           var position = element.getBoundingClientRect();
+           function sleep(ms) {
+            return new Promise(resolve => setTimeout(resolve, ms));
+            }
+           async function Nopadding(){
+               await sleep(100)
+            document.getElementById("topelem").style.paddingTop = "0px"
+           }
+           if (position.top === 0) {
+              document.getElementById("topelem").style.transition = "all 0.3s";
+              document.getElementById("topelem").style.paddingTop = "35px";
+              Nopadding();
+           }
+        });
+        function sleep(ms) {
+            return new Promise(resolve => setTimeout(resolve, ms));
+            }
       function DarkMode(){
           document.getElementById("DrkBtn_")
       }
