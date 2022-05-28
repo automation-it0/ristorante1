@@ -734,22 +734,34 @@ button {
         font-size: 36px;
         font-weight: 700;
         text-shadow: rgba(0, 0, 0, 0.5) 0 10px 10px;
+      }
+      .galleryn1{
+          width:100vw;
+          height:120vw;
+          max-width:400px;
+          max-height:600px;
+          object-fit: cover;
+          background-size:cover;
+          margin:5px auto;
+          margin:2px solid black;
+      }
+      .container-2{
+          display: flex;
+          overflow-x:scroll;
       }</style>
     <h1 class="title">Galleria</h1>
-
-<div id="app" class="contcontainer">
-  <tempcard data-image="https://i.ibb.co/HKmJXDT/Whats-App-Image-2022-03-30-at-12-55-58.jpg">
-  </tempcard>
-  <tempcard data-image="https://i.ibb.co/bLLW1xM/Whats-App-Image-2022-03-30-at-12-55-55-1.jpg">
-  </tempcard>
-  <tempcard data-image="https://i.ibb.co/YRSFr0B/Whats-App-Image-2022-03-30-at-12-55-55.jpg">
-  </tempcard>
-  <tempcard data-image="https://i.ibb.co/Q6WD4Cd/Whats-App-Image-2022-03-30-at-12-55-56-1.jpg">
-  </tempcard>
-   <tempcard data-image="https://i.ibb.co/CwRHqtN/Whats-App-Image-2022-03-30-at-12-55-56.jpg">
-  </tempcard>
-    <tempcard data-image="https://i.ibb.co/xjmKrPg/Whats-App-Image-2022-03-30-at-12-55-57-1.jpg">
-  </tempcard>
+<p style="text-align: center;">(scorri)</p>
+<div class="container-2" style="display:flex">
+  <img class="galleryn1" src="https://i.ibb.co/HKmJXDT/Whats-App-Image-2022-03-30-at-12-55-58.jpg">
+  </img>
+  <img class="galleryn1" src="https://i.ibb.co/bLLW1xM/Whats-App-Image-2022-03-30-at-12-55-55-1.jpg">
+</img>
+<img class="galleryn1" src="https://i.ibb.co/Q6WD4Cd/Whats-App-Image-2022-03-30-at-12-55-56-1.jpg">
+</img>
+<img class="galleryn1" src="https://i.ibb.co/CwRHqtN/Whats-App-Image-2022-03-30-at-12-55-56.jpg">
+</img>
+<img class="galleryn1" src="https://i.ibb.co/xjmKrPg/Whats-App-Image-2022-03-30-at-12-55-57-1.jpg">
+</img>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.0.1/vue.min.js"></script>
 <script>Vue.config.devtools = true;
@@ -760,6 +772,7 @@ button {
           @mousemove="handleMouseMove"
           @mouseenter="handleMouseEnter"
           @mouseleave="handleMouseLeave"
+          style="display:flex"
           ref="tempcard">
           <div class="tempcard"
             :style="tempcardStyle">
